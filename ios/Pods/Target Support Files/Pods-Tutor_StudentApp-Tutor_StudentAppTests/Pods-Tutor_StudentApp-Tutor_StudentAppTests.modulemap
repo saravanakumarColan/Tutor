@@ -1,0 +1,6 @@
+module Pods_Tutor_StudentApp_Tutor_StudentAppTests {
+  umbrella header "Pods-Tutor_StudentApp-Tutor_StudentAppTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
