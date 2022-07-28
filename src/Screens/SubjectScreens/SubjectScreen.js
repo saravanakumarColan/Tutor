@@ -1,11 +1,20 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-
-const SubjectScreen = () => {
+import Header from '../../Components/Header'
+import HomeContainer from '../../Components/HomeContainer'
+import Tabbar from '../../Components/Tabbar'
+import {
+    LG_BG_THEME,
+    Basic_Viewdimension,
+    View_Spacing,
+    fontSize,
+  } from "../../Assets/Constant/fontsAndColors";
+function SubjectScreen(props)  {
   return (
-    <View>
-      <Text>SubjectScreen</Text>
-    </View>
+    <HomeContainer>
+<Header  {...props}/>
+<Tabbar tab  Tab={(e)=>console.log(e)}/>
+    </HomeContainer>
   )
 }
 

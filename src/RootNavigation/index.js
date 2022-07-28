@@ -50,7 +50,7 @@ export default function App() {
 
 
   const beforeLoggedIn = {
-  
+    SubjectScreen:SubjectScreen,
     StartScreen:StartScreen,
     SignupScreen:SignupScreen,
     LoginScreen: LoginScreen,
