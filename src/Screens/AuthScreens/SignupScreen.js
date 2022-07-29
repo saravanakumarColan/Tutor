@@ -30,7 +30,7 @@ function SignupScreen(props) {
   return (
     <HomeContainer>
       {/* image */}
-      <Header {...props} back={true} />
+      <Header {...props} title={"Register"} back={true} />
       <Image
         style={{ height: "35%", width: "100%", resizeMode: "contain" ,}}
         source={require("../../Assets/images/register.png")}
