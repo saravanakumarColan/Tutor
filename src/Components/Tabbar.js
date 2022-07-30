@@ -7,7 +7,7 @@ import {
 } from "../Assets/Constant/fontsAndColors";
 
 function Tabbar(props) {
-    const { name, name1,Tab1 } = props;
+    const { name, name1,Tab1 ,} = props;
   const [tab, setTab] = React.useState(true);
   const [tab1, setTab1] = React.useState(false);
 
@@ -16,15 +16,13 @@ function Tabbar(props) {
   const _selectTab = () => {
     setTab(true);
     setTab1(false);
-    props.Tab=()=>{
-        return true
-    }
+ Tab1(true)
   }
   const _selectTab1 = () => {
     
     setTab(false);
     setTab1(true);
-  
+Tab1(false)
   };
   return (
     <View
