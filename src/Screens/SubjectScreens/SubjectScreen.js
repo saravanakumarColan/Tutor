@@ -139,6 +139,7 @@ function SubjectScreen(props) {
           <View style={{ height: (height / 100) * 7 }} />
 
           <Button
+          onPress = {()=>{props.navigation.navigate('QuizScreen')}}
             textStyle={{
               color: "#ffffff",
               fontSize: fontSize.Large,

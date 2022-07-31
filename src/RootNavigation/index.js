@@ -30,6 +30,7 @@ import PaymentScreens from '../Screens/PaymentScreens/PaymentScreens';
 import SubjectScreen from '../Screens/SubjectScreens/SubjectScreen';
 import WithdrawScreen from '../Screens/PaymentScreens/WithdrawScreen';
 import MyEarningsScreens from '../Screens/PaymentScreens/MyEarningsScreens';
+import QuizScreen from '../Screens/SubjectScreens/QuizScreen';
 // Before rendering any navigation stack
 
 const Stack = createStackNavigator();
@@ -56,7 +57,6 @@ export default function App() {
     StartScreen:StartScreen,
     SignupScreen:SignupScreen,
     LoginScreen: LoginScreen,
-    SubjectScreen:SubjectScreen,
   
    
   };
@@ -74,6 +74,7 @@ export default function App() {
     PaymentScreens:PaymentScreens,
     ComplaintsList:ComplaintsList,
     SubjectScreen:SubjectScreen,
+    QuizScreen:QuizScreen,
     WithdrawScreen:WithdrawScreen,
     MyEarningsScreens:MyEarningsScreens,
   };
@@ -127,9 +128,19 @@ export default function App() {
 
 
 const My_Home_Tab = () => {
+  const tabsInner = {
+    SubjectScreen:SubjectScreen,
+    QuizScreen:QuizScreen,
+
+  };
   return (
     <Stack.Navigator  screenOptions={{ headerShown: false }}>
       <Stack.Screen name="Home" component={PastSessionScreen} /> 
+      {Object.entries({
+          ...tabsInner,
+        }).map(([name, component]) => (
+          <Stack.Screen key={name} name={name} component={component} />
+        ))}
     </Stack.Navigator>
   );
 };
@@ -138,8 +149,9 @@ export { My_Home_Tab };
 
 const My_club_Tab = () => {
   const tabsInner = {
-    TutorResultScreen : TutorResultScreen
-    
+    TutorResultScreen : TutorResultScreen,
+  
+
   };
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
