@@ -4,7 +4,7 @@ import HomeContainer from "../../Components/HomeContainer";
 import {
   View_Spacing,
   fontSize,
-  LG_BG_THEME,
+  LG_BG_THEME,height
 } from "../../Assets/Constant/fontsAndColors";
 import Button from "../../Components/Button";
 import { icons } from "../../Assets/icons";
@@ -32,7 +32,7 @@ function SignupScreen(props) {
       {/* image */}
       <Header {...props} title={"Register"} back={true} />
       <Image
-        style={{ height: "35%", width: "100%", resizeMode: "contain" ,}}
+        style={{ height: height/100*20, width: "100%", resizeMode: "contain" ,}}
         source={require("../../Assets/images/register.png")}
       />
       

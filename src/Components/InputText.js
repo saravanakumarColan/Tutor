@@ -24,7 +24,7 @@ function InputText(props) {
           <TextInput
           placeholderTextColor={LG_BG_THEME.App_Text_Inactive}
           {...props}
-           style={{ flex: 1,fontSize:20 ,padding:0}} />
+           style={{ flex: 1,fontSize:15 ,padding:0}} />
         </View>
       </View>
       <View style={{ flex: 0.1 }} />

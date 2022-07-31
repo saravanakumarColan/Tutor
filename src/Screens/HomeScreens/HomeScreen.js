@@ -5,6 +5,7 @@ import {
   fontSize,
   LG_BG_THEME,
   Basic_Viewdimension,
+  height,
 } from "../../Assets/Constant/fontsAndColors";
 import Header from "../../Components/Header";
 import RoundButton from "../../Components/RoundButton";
@@ -19,18 +20,21 @@ function HomeScreen(props) {
   return (
     <HomeContainer>
       <Header title="Dashboard" {...props} />
+      <View style={{ height: View_Spacing.VS_W2 }} />
       <Image
         source={require("../../Assets/images/dashboard.png")}
         style={{
-          width: "100%",
-          height: "20%",
+          width: height/100*60,
+          height: height/100*19,
           resizeMode: "contain",
-          top: View_Spacing.VS_W1,
+          
+         
         }}
       />
+ 
       <View style={{ height: View_Spacing.VS_W2 }} />
       <TouchableOpacity
-        style={{ flexDirection: "row" }}
+        style={{flex:0.2, flexDirection: "row" ,}}
         onPress={() => props.navigation.navigate("MyProfile")}
       >
         <View
@@ -99,7 +103,7 @@ function HomeScreen(props) {
           </View>
         </View>
       </TouchableOpacity>
-      <View style={{ padding: 15 }}>
+      <View style={{flex:0.3, padding: 15 ,}}>
         <Text
           style={{
             color: LG_BG_THEME.App_Text_Blue,
@@ -127,11 +131,11 @@ function HomeScreen(props) {
           }
         </Text>
       </View>
-      <View style={{ height: View_Spacing.VS_W5 }} />
+      <View style={{ height: View_Spacing.VS_W2 }} />
 
       <Label />
-
-      <View style={{ height: View_Spacing.VS_W7 }} />
+ 
+      <View style={{ height: View_Spacing.VS_W5 }} />
       <Button
         textStyle={{
           color: "#ffffff",
@@ -141,6 +145,7 @@ function HomeScreen(props) {
         onPress={() => props.navigation.navigate("SubjectScreen")}
         name="Add Subject"
       />
+      <View style={{ height: height/100*5 }} />
     </HomeContainer>
   );
 }
