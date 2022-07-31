@@ -1,12 +1,14 @@
 import React from 'react'
-import {View } from "react-native";
+import {View,ScrollView } from "react-native";
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
-KeyboardAwareScrollView
+
 function HomeContainer(props) {
   return (
   <View style={{flex:1,backgroundColor:'#fefefe',shadowOpacity:2}}>
     <KeyboardAwareScrollView >
+      <ScrollView>
     {props.children}
+    </ScrollView>
     </KeyboardAwareScrollView>
   </View>
   )
