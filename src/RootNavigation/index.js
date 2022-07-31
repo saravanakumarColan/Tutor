@@ -28,6 +28,8 @@ import EmailScreens from '../Screens/EmailScreens/EmailScreens';
 import ComplaintsList from '../Screens/NotificationScreen/ComplaintsList';
 import PaymentScreens from '../Screens/PaymentScreens/PaymentScreens';
 import SubjectScreen from '../Screens/SubjectScreens/SubjectScreen';
+import WithdrawScreen from '../Screens/PaymentScreens/WithdrawScreen';
+import MyEarningsScreens from '../Screens/PaymentScreens/MyEarningsScreens';
 // Before rendering any navigation stack
 
 const Stack = createStackNavigator();
@@ -50,6 +52,7 @@ export default function App() {
 
 
   const beforeLoggedIn = {
+    MyEarningsScreens:MyEarningsScreens,
     StartScreen:StartScreen,
     SignupScreen:SignupScreen,
     LoginScreen: LoginScreen,
@@ -70,7 +73,8 @@ export default function App() {
     EmailScreens:EmailScreens,
     PaymentScreens:PaymentScreens,
     ComplaintsList:ComplaintsList,
-    SubjectScreen:SubjectScreen
+    SubjectScreen:SubjectScreen,
+    WithdrawScreen:WithdrawScreen,
   };
   function AuthStack() {
     return (

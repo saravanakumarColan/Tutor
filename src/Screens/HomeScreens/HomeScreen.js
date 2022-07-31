@@ -12,10 +12,12 @@ import Icon from "react-native-vector-icons/AntDesign";
 import { List, Chip, Divider } from "react-native-paper";
 import Button from "../../Components/Button";
 import HomeContainer from "../../Components/HomeContainer";
-HomeContainer
+import Label from "../../Components/Label";
+
+HomeContainer;
 function HomeScreen(props) {
   return (
-  <HomeContainer>
+    <HomeContainer>
       <Header title="Dashboard" {...props} />
       <Image
         source={require("../../Assets/images/dashboard.png")}
@@ -26,7 +28,7 @@ function HomeScreen(props) {
           top: View_Spacing.VS_W1,
         }}
       />
-      <View style={{height:View_Spacing.VS_W2}}/>
+      <View style={{ height: View_Spacing.VS_W2 }} />
       <TouchableOpacity
         style={{ flexDirection: "row" }}
         onPress={() => props.navigation.navigate("MyProfile")}
@@ -97,73 +99,48 @@ function HomeScreen(props) {
           </View>
         </View>
       </TouchableOpacity>
-     <View  style={{padding:15}}>
-     <Text
-              style={{
-                color: LG_BG_THEME.App_Text_Blue,
-                fontSize: 16,
-                textAlign: "left",
-                fontFamily: "Poppins-SemiBold",
-                lineHeight: 20,
-                paddingTop: 5,
-              }}
-            >
-              {"Bio"}
-            </Text>
-            <Text
-              style={{
-                color: LG_BG_THEME.App_Text_Inactive,
-                fontSize: 12,
-                textAlign: "left",
-                fontFamily: "Poppins-SemiBold",
-                lineHeight: 20,
-                paddingTop: 5,
-              }}
-            >
-              {"By clicking “Accept All Cookies”, you agree to the storing of cookies on your device to enhance site navigation, analyze site usage, and assist in our marketing efforts."}
-            </Text>
-     </View>
-     <View style={{height:View_Spacing.VS_W5}}/>
-        <View style={{height:View_Spacing.VS_W6,flexDirection:'row',elevation:1}}>
-          <View style={{flex:0.1}} />
-          <View style={{flex:0.4,alignItems:'center',backgroundColor:LG_BG_THEME.App_Text_Blue,justifyContent:'center',width:'60%',borderTopLeftRadius:Basic_Viewdimension.VD_BorderRadius,borderBottomLeftRadius:Basic_Viewdimension.VD_BorderRadius}}>
-          <Text
-              style={{
-                color: "#fff",
-                fontSize: 16,
-                textAlign: "left",
-                fontFamily: "Poppins-SemiBold",
-                lineHeight: 20,
-               
-              }}
-            >
-              {"My Earnings"}
-            </Text>
-          </View>
-        
-            <View style={{borderWidth:0.3,borderColor:LG_BG_THEME.App_Text_Blue,flex:0.4,alignItems:'center',justifyContent:'center',borderTopRightRadius:Basic_Viewdimension.VD_BorderRadius,borderBottomRightRadius:Basic_Viewdimension.VD_BorderRadius}}>
-            <Text
-              style={{
-                color: LG_BG_THEME.App_Text_Blue,
-                fontSize: 20,
-                textAlign: "left",
-                fontFamily: "Poppins-SemiBold",
-                lineHeight: 20,
-                
-              }}
-            >
-              {"1200.00"}
-            </Text>
-            </View>
-            <View style={{flex:0.1}} />
-        </View>
-        <View style={{height:View_Spacing.VS_W7}}/>
-        <Button textStyle={{
-                color: "#ffffff",
-                fontSize: fontSize.Large,
-                letterSpacing: 2,
-       } } 
-       onPress={()=>alert("Add subject")} name="Add Subject"/>
+      <View style={{ padding: 15 }}>
+        <Text
+          style={{
+            color: LG_BG_THEME.App_Text_Blue,
+            fontSize: 16,
+            textAlign: "left",
+            fontFamily: "Poppins-SemiBold",
+            lineHeight: 20,
+            paddingTop: 5,
+          }}
+        >
+          {"Bio"}
+        </Text>
+        <Text
+          style={{
+            color: LG_BG_THEME.App_Text_Inactive,
+            fontSize: 12,
+            textAlign: "left",
+            fontFamily: "Poppins-SemiBold",
+            lineHeight: 20,
+            paddingTop: 5,
+          }}
+        >
+          {
+            "By clicking “Accept All Cookies”, you agree to the storing of cookies on your device to enhance site navigation, analyze site usage, and assist in our marketing efforts."
+          }
+        </Text>
+      </View>
+      <View style={{ height: View_Spacing.VS_W5 }} />
+
+      <Label />
+
+      <View style={{ height: View_Spacing.VS_W7 }} />
+      <Button
+        textStyle={{
+          color: "#ffffff",
+          fontSize: fontSize.Large,
+          letterSpacing: 2,
+        }}
+        onPress={() => props.navigation.navigate("SubjectScreen")}
+        name="Add Subject"
+      />
     </HomeContainer>
   );
 }

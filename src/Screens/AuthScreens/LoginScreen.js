@@ -17,8 +17,13 @@ import HomeComtainer from "../../Components/HomeContainer";
 import Button from "../../Components/Button";
 import { icons } from "../../Assets/icons";
 
-import { StackActions,} from "@react-navigation/native";
-import { View_Spacing,fontSize,LG_BG_THEME ,height} from "../../Assets/Constant/fontsAndColors";
+import { StackActions } from "@react-navigation/native";
+import {
+  View_Spacing,
+  fontSize,
+  LG_BG_THEME,
+  height,
+} from "../../Assets/Constant/fontsAndColors";
 
 function LoginScreen(props) {
   const { colors } = useTheme();
@@ -65,17 +70,24 @@ function LoginScreen(props) {
   return (
     <HomeComtainer>
       {/* image */}
-      <View style={{ flex: 1, height: (height / 100) * 30 ,}}>
-      <Image
-        style={{ height: "100%", width: "100%", resizeMode: "contain", }}
-        source={require("../../Assets/images/login.png")}
-      />
- </View>
+      <View style={{ flex: 1, height: (height / 100) * 30 }}>
+        <Image
+          style={{ height: "100%", width: "100%", resizeMode: "contain" }}
+          source={require("../../Assets/images/login.png")}
+        />
+      </View>
       {/* Label */}
 
       <View style={styles.sub_container}>
         <View style={{ height: View_Spacing.VS_W3 }} />
-        <Text style={{ fontSize: fontSize.ExtraLarge ,color:LG_BG_THEME.App_Text_Blue}}>{"Sign In"}</Text>
+        <Text
+          style={{
+            fontSize: fontSize.ExtraLarge,
+            color: LG_BG_THEME.App_Text_Blue,
+          }}
+        >
+          {"Sign In"}
+        </Text>
       </View>
 
       <View style={{ height: View_Spacing.VS_W5 }} />
@@ -99,19 +111,29 @@ function LoginScreen(props) {
           paddingRight: View_Spacing.VS_W4,
         }}
       >
-        <Text style={{ fontSize: fontSize.Medium ,color:LG_BG_THEME.App_Text_Blue}}>{"Forgot Password?"}</Text>
+        <Text
+          style={{
+            fontSize: fontSize.Medium,
+            color: LG_BG_THEME.App_Text_Blue,
+          }}
+        >
+          {"Forgot Password?"}
+        </Text>
       </TouchableOpacity>
 
       <View style={{ height: View_Spacing.VS_W9 }} />
 
       <Button
-       textStyle={{
-                color: "#ffffff",
-                fontSize: fontSize.Large,
-                letterSpacing: 2,
-       } } 
-       onPress={()=>props.navigation.dispatch(StackActions.replace("BottomTab"))}
-       name={"LOGIN"} />
+        textStyle={{
+          color: "#ffffff",
+          fontSize: fontSize.Large,
+          letterSpacing: 2,
+        }}
+        onPress={() =>
+          props.navigation.dispatch(StackActions.replace("BottomTab"))
+        }
+        name={"LOGIN"}
+      />
     </HomeComtainer>
   );
 }
@@ -126,6 +148,10 @@ const styles = StyleSheet.create({
     width: "100%",
     height: "100%",
   },
-  sub_container: { flex: 0.1, justifyContent: "center", alignItems: "center" ,},
+  sub_container: {
+    flex: 0.1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
 });
 export default LoginScreen;

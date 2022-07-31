@@ -62,7 +62,7 @@ const LG_BG_THEME = {
   Border_Active: "#D9D9D9",
   App_Text_Header: "#4E4E4E",
   App_Text_Inactive: "#b5b3b3",
-
+App_Text_Green:'#42f551',
   QR_CodeBG: "#414141",
   APPTHEME_BG_2: "#f2f2f2",
   LIGHTGREY_THEME_2: "#E8F0FE",
