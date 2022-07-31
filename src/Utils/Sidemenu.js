@@ -153,32 +153,9 @@ const SideMenu = props => {
             flex: 0.8,
           }}>
           <View style={{paddingLeft: 4}}>
-            {/* <DrawerItem
-              ScreenOptions={{
-                activeTintColor: colors.primary,
-                inactiveTintColor: colors.sublabelTextColor,
-                showLabel: true,
-                headerShown: false,
-              }}
-              icon={({color, size, focused}) => (
-                <MaterialCommunityIcons
-                  name="home"
-                  color={color}
-                  size={size}
-                  // color={colors.primary}
-                  color={focused ? colors.primary : colors.sublabelTextColor}
-                />
-              )}
-              label="Home"
-              labelStyle={styles.labelTextStyle}
-              onPress={() =>
-                props.navigation.dispatch(StackActions.replace('BottomTab'))
-              }
-              inactiveTintColor="red"
-            /> */}
+            
             <List.Section>
-              {/* <List.Subheader>Custom description</List.Subheader> */}
-              <List.Item
+            <List.Item
                 onPress={() =>
                   props.navigation.dispatch(StackActions.replace('BottomTab'))
                 }
@@ -223,7 +200,7 @@ const SideMenu = props => {
                     }}
                   />
                 )}
-                title="My Account"
+                title="DashBoard"
                 titleStyle={{
                   color: '#000',
                   fontWeigt: '400',
@@ -242,8 +219,77 @@ const SideMenu = props => {
                         fontSize: 10,
                         lineHeight: 15,
                       }}>
-                      {/* Access to */}
-                      My Account & Details
+                      Manage subject & Details
+                    </Text>
+                  </View>
+                )}
+              />
+              <Divider style={{}} />
+              <List.Item
+                onPress={() =>
+                  props.navigation.navigate('PreviousOrderScreen')
+                }
+                left={() => (
+                  // <MaterialCommunityIcons
+                  //   name="home"
+                  //   color={"#000"}
+                  //   size={24}
+                  //   style={{ alignSelf: "center", paddingHorizontal: 5 }}
+                  // />
+                  <View
+                    style={{
+                      borderwidth: 0.2,
+                      height: 36,
+                      width: 36,
+                      borderRadius: 18,
+                      backgroundColor: 'rgba(242, 242, 247, 255)',
+                      alignSelf: 'center',
+                      justifyContent: 'center',
+                      marginRight: 3,
+                    }}>
+                    <Image
+                      source={require('../Assets/icons/Auth/profile.png')}
+                      tintColor={'#147AD6'}
+                      style={{
+                        height: 18,
+                        width: 18,
+                        // borderRadius: 30,
+                        // marginTop: 15,
+                        marginHorizontal: 5,
+                        alignSelf: 'center',
+                      }}
+                    />
+                  </View>
+                )}
+                right={props => (
+                  <List.Icon
+                    {...props}
+                    icon="chevron-right"
+                    style={{
+                      paddingLeft: 15,
+                    }}
+                  />
+                )}
+                title="Previous Orders"
+                titleStyle={{
+                  color: '#000',
+                  fontWeigt: '400',
+                  fontFamily: 'Poppins-Medium',
+                  fontSize: 13,
+                  lineHeight: 18,
+                }}
+                description={({}) => (
+                  <View>
+                    <Text
+                      numberOfLines={1}
+                      style={{
+                        color: 'rgb(72,72,74)',
+                        fontWeigt: '300',
+                        fontFamily: 'Poppins-Regular',
+                        fontSize: 10,
+                        lineHeight: 15,
+                      }}>
+                      Previous Orders & Details
                     </Text>
                   </View>
                 )}
@@ -283,7 +329,7 @@ const SideMenu = props => {
                   </View>
                 )}
                 right={props => <List.Icon {...props} icon="chevron-right" />}
-                title="Payments"
+                title="Payout"
                 titleStyle={{
                   color: '#000',
                   fontWeigt: '400',
@@ -359,6 +405,114 @@ const SideMenu = props => {
                         lineHeight: 15,
                       }}>
                       Manage the application
+                    </Text>
+                  </View>
+                )}
+              />
+                 <Divider style={{}} />
+              <List.Item
+                onPress={() => null}
+                left={() => (
+                  <View
+                    style={{
+                      borderwidth: 0.2,
+                      height: 36,
+                      width: 36,
+                      borderRadius: 18,
+                      backgroundColor: 'rgba(242, 242, 247, 255)',
+                      alignSelf: 'center',
+                      justifyContent: 'center',
+                      marginRight: 3,
+                    }}>
+                    <Image
+                      source={require('../Assets/icons/Auth/profile.png')}
+                      tintColor={'#147AD6'}
+                      style={{
+                        height: 18,
+                        width: 18,
+                        // borderRadius: 30,
+                        // marginTop: 15,
+                        marginHorizontal: 5,
+                        alignSelf: 'center',
+                      }}
+                    />
+                  </View>
+                )}
+                right={props => <List.Icon {...props} icon="chevron-right" />}
+                title="Help"
+                titleStyle={{
+                  color: '#000',
+                  fontWeigt: '400',
+                  fontFamily: 'Poppins-Medium',
+                  fontSize: 13,
+                  lineHeight: 18,
+                }}
+                description={({}) => (
+                  <View style={[styles.container, styles.column]}>
+                    <Text
+                      numberOfLines={1}
+                      style={{
+                        color: 'rgb(72,72,74)',
+                        fontWeigt: '300',
+                        fontFamily: 'Poppins-Regular',
+                        fontSize: 10,
+                        lineHeight: 15,
+                      }}>
+                      Understand the application
+                    </Text>
+                  </View>
+                )}
+              />
+                 <Divider style={{}} />
+              <List.Item
+                onPress={() => props.navigation.navigate('ComplaintsList')}
+                left={() => (
+                  <View
+                    style={{
+                      borderwidth: 0.2,
+                      height: 36,
+                      width: 36,
+                      borderRadius: 18,
+                      backgroundColor: 'rgba(242, 242, 247, 255)',
+                      alignSelf: 'center',
+                      justifyContent: 'center',
+                      marginRight: 3,
+                    }}>
+                    <Image
+                      source={require('../Assets/icons/Auth/profile.png')}
+                      tintColor={'#147AD6'}
+                      style={{
+                        height: 18,
+                        width: 18,
+                        // borderRadius: 30,
+                        // marginTop: 15,
+                        marginHorizontal: 5,
+                        alignSelf: 'center',
+                      }}
+                    />
+                  </View>
+                )}
+                right={props => <List.Icon {...props} icon="chevron-right" />}
+                title="Reviews"
+                titleStyle={{
+                  color: '#000',
+                  fontWeigt: '400',
+                  fontFamily: 'Poppins-Medium',
+                  fontSize: 13,
+                  lineHeight: 18,
+                }}
+                description={({}) => (
+                  <View style={[styles.container, styles.column]}>
+                    <Text
+                      numberOfLines={1}
+                      style={{
+                        color: 'rgb(72,72,74)',
+                        fontWeigt: '300',
+                        fontFamily: 'Poppins-Regular',
+                        fontSize: 10,
+                        lineHeight: 15,
+                      }}>
+                      List of Reviews
                     </Text>
                   </View>
                 )}
@@ -553,59 +707,7 @@ const SideMenu = props => {
               )}
             />
 
-            {/* <DrawerItem
-              icon={({ color, size, focused }) => (
-                <Icon
-                  icon={'notification'}
-                  style={[{ resizeMode: 'contain', height: 20, width: 25 }]}
-                  tintColor={color}
-                />
-              )}
-              label="Notifications"
-              labelStyle={styles.labelTextStyle}
-              onPress={() => props.navigation.navigate('NotificationScreen')}
-              inactiveTintColor="#324345"
-            /> */}
-
-            {/* <Divider />
-
-            {emailLogin ? (
-              <DrawerItem
-                icon={({ color, size }) => (
-                  <Icon
-                    icon={'password'}
-                    style={[{ resizeMode: 'contain', height: 25, width: 25 }]}
-                    tintColor={color}
-                  />
-                )}
-                label="Change Password"
-                labelStyle={styles.labelTextStyle}
-                inactiveTintColor="#324345"
-                onPress={() =>
-                  forgotPassword(userListResponse.Response?.user_details?.email_id)
-                }
-              />
-            ) : null}
-            <Divider /> */}
-
-            {/* <DrawerItem
-              icon={({ color, size }) => (
-                <Icon
-                  icon={'logout'}
-                  tintColor={color}
-                  style={[{ resizeMode: 'contain', height: 20, width: 25 }]}
-                />
-              )}
-
-              label="Delete Account"
-              labelStyle={[styles.labelTextStyle]}
-              inactiveTintColor="#324345"
-              disabled={disabled}
-              onPress={disabled ? () => _AppleAccountDelete() : null}
-            />
-            <Divider /> */}
-
-            {/* <Divider style={{ marginHorizontal: 10 }} /> */}
+            
           </View>
           <Divider />
         </View>
@@ -619,7 +721,7 @@ const SideMenu = props => {
               fontFamily: 'Poppins-Medium',
               // margin:1
             }}>
-            {'1.0'}
+            {'Version 1.0'}
           </Text>
           <Text
             style={{
@@ -638,68 +740,10 @@ const SideMenu = props => {
                 terms: ' ',
               });
             }}>
-            {'privacy_Policy'}
+            {'privacy Policy'}
           </Text>
-          <Text
-            style={{
-              color: '#324345',
-              // textAlign: 'center',
-              color: '#147AD6',
-              fontSize: 12,
-              // margin:1
-            }}
-            onPress={() => {
-              //setPrivacyPolicy(!privacyPolicy)
-              props.navigation.navigate('WebViewScreen', {
-                WebViewLink: 'https://kridasport.com/legal',
-                isarticle: true,
-                terms: ' ',
-              });
-            }}>
-            {'privacyPolicyterms'}
-          </Text>
-          {/* <Text
-          style={{
-            color: '#324345',
-            // textAlign: 'center',
-            color: '#147AD6',
-            fontSize: 12,
-            // margin:1
-            paddingVertical: 5
-
-          }}
-          onPress={() => {
-            //setPrivacyPolicy(!privacyPolicy)
-            props.navigation.navigate('WebViewScreen', {
-              WebViewLink: 'https://kridasport.com/how-to',
-              isarticle: true,
-              terms: " "
-            });
-          }}
-        >
-          {global.const.kridaGuids}
-        </Text> */}
-          {/* <Text
-          style={{
-            color: '#324345',
-            // textAlign: 'center',
-            color: '#147AD6',
-            fontSize: 12,
-            // margin:1
-            marginTop:5
-
-          }}
-          onPress={() => {
-            //setPrivacyPolicy(!privacyPolicy)
-            props.navigation.navigate('WebViewScreen', {
-              WebViewLink: 'https://kridasport.com/known-issues/',
-              isarticle: true,
-              terms: " "
-            });
-          }}
-        >
-          {global.const.KridaKnownIssues}
-        </Text> */}
+  
+       
         </View>
       </DrawerContentScrollView>
       {/* <Divider /> */}

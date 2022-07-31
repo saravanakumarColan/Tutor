@@ -18,6 +18,7 @@ import Icon from "react-native-vector-icons/AntDesign";
 import { List, Chip, Divider } from "react-native-paper";
 import { ScrollView } from "react-native-gesture-handler";
 import LinearGradient from "react-native-linear-gradient";
+import { icons } from "../../Assets/icons";
 
 function ComplaintsList(props) {
   const DATA = [
@@ -39,99 +40,97 @@ function ComplaintsList(props) {
     },
   ];
   const renderItem = ({ item }) => (
-       <View>
-               <View
-          style={{
-            // justifyContent: "center",
-            alignItems: "center",
-            paddingVertical: 10,
-            flexDirection:'row'
-          }}
-        >
-          <Image
-            source={{
-              uri: "https://ui-avatars.com/api/?length=1&background=2F79EB&color=fff&name=saravana",
-            }}
-            style={{
-              width: 45,
-              height: 45,
-              borderRadius: 45,
-            }}
-          />
-          <View style={{flex:1}}>
-          <Text
-          style={{
-            color: LG_BG_THEME.App_Border,
-            fontSize: 14,
-            fontFamily: "Poppins-SemiBold",
-            lineHeight: 20,
-            paddingTop: 5,
-            marginLeft:5
-
-          }}
-        >
-          {"Lorem Ipsum"}
-        </Text>
-            
-          </View>
-        
+    <View>
+      <View
+        style={{
+          // justifyContent: "center",
+          alignItems: "center",
+          paddingVertical: 10,
+          flexDirection: "row",
+        }}
+      >
         <Image
-            source={require('../../Assets/icons/block.png')}
-            style={{
-              width: 15,
-              height: 15,
-              marginRight:5
-            }}
-          />
-                      <Text
+          source={{
+            uri: "https://ui-avatars.com/api/?length=1&background=2F79EB&color=fff&name=saravana",
+          }}
           style={{
-            color: LG_BG_THEME.App_Border,
+            width: 45,
+            height: 45,
+            borderRadius: 45,
+          }}
+        />
+        <View style={{ flex: 1 }}>
+          <Text
+            style={{
+              color: LG_BG_THEME.App_Border,
+              fontSize: 14,
+              fontFamily: "Poppins-SemiBold",
+              lineHeight: 20,
+              paddingTop: 5,
+              marginLeft: 5,
+            }}
+          >
+            {"Lorem Ipsum"}
+          </Text>
+        </View>
+
+        <Text
+          style={{
+            color: LG_BG_THEME.App_Text_Inactive,
             fontSize: 10,
             fontFamily: "Poppins-Regular",
             lineHeight: 20,
             paddingTop: 5,
           }}
         >
-          {"Blocked"}
+          {"3 Days ago"}
         </Text>
       </View>
 
-      <View style={styles.shadowContainerStyle}>
-        <Text
-          style={{
-            color: "grey",
-            fontSize: 14,
-            fontFamily: "Poppins-SemiBold",
-            lineHeight: 20,
-            paddingTop: 5,
-          }}
-        >
-          {"Description"}
-        </Text>
+      <View>
         <Text
           style={{
             color: "grey",
             fontSize: 14,
             fontFamily: "Poppins-Regular",
             // paddingTop: 2,
-            paddingVertical:10,
-            
-            
+            paddingVertical: 10,
           }}
         >
-          {"is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"}
+          {
+            "is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+          }
         </Text>
-       
-        <Divider/>
 
+        <Divider />
+        <View style={{ flexDirection: "row", alignSelf: "flex-end" }}>
+          <Image
+            source={icons.warning}
+            style={{
+              width: 15,
+              height: 15,
+              marginRight: 5,
+            }}
+          />
+          <Text
+            style={{
+              color: LG_BG_THEME.App_Border,
+              fontSize: 10,
+              fontFamily: "Poppins-Regular",
+              lineHeight: 20,
+            }}
+          >
+            {"Report"}
+          </Text>
+        </View>
       </View>
-      </View>
+    </View>
   );
   return (
     <View style={styles.Container}>
-      <Header title={"Complaints"} {...props} />
+      <Header title={"Reviews"} {...props} />
       <ScrollView style={styles.Container}>
-        <View style={{ justifyContent: "center",paddingHorizontal:20 }}>
+        <View style={{ justifyContent: "center", paddingHorizontal: 20 }}>
           <FlatList
             data={DATA}
             renderItem={renderItem}
@@ -158,22 +157,20 @@ const styles = StyleSheet.create({
     marginTop: 5,
   },
 
-
- shadowContainerStyle: {
-  backgroundColor: '#fff',
-  marginHorizontal:5,
-  borderRadius: 10,
-  padding: 10,
-  shadowColor: '#000000',
-  shadowOffset: {
-    width: 0,
-    height: 3
+  shadowContainerStyle: {
+    backgroundColor: "#fff",
+    marginHorizontal: 5,
+    borderRadius: 10,
+    padding: 10,
+    shadowColor: "#000000",
+    shadowOffset: {
+      width: 0,
+      height: 3,
+    },
+    shadowRadius: 5,
+    shadowOpacity: 0.4,
+    justifyContent: "space-around",
   },
-  shadowRadius: 5,
-  shadowOpacity: 0.4,
-    justifyContent:'space-around'
-  },
-  
 });
 
 export default ComplaintsList;

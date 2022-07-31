@@ -50,7 +50,7 @@ export const CustomTab = () => {
     >
       <Tab.Screen
         name="Home"
-        component={HomeScreen}
+        component={My_Home_Tab}
         options={{
           tabBarLabelStyle: { fontFamily: "Poppins-SemiBold" },
           headerShown: false,

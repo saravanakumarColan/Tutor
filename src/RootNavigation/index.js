@@ -31,6 +31,7 @@ import SubjectScreen from '../Screens/SubjectScreens/SubjectScreen';
 import WithdrawScreen from '../Screens/PaymentScreens/WithdrawScreen';
 import MyEarningsScreens from '../Screens/PaymentScreens/MyEarningsScreens';
 import QuizScreen from '../Screens/SubjectScreens/QuizScreen';
+import PreviousOrderScreen from '../Screens/NotificationScreen/PreviousOrderScreen';
 // Before rendering any navigation stack
 
 const Stack = createStackNavigator();
@@ -73,10 +74,11 @@ export default function App() {
     EmailScreens:EmailScreens,
     PaymentScreens:PaymentScreens,
     ComplaintsList:ComplaintsList,
-    SubjectScreen:SubjectScreen,
-    QuizScreen:QuizScreen,
+    // SubjectScreen:SubjectScreen,
+    // QuizScreen:QuizScreen,
     WithdrawScreen:WithdrawScreen,
     MyEarningsScreens:MyEarningsScreens,
+    PreviousOrderScreen:PreviousOrderScreen
   };
   function AuthStack() {
     return (
@@ -135,7 +137,7 @@ const My_Home_Tab = () => {
   };
   return (
     <Stack.Navigator  screenOptions={{ headerShown: false }}>
-      <Stack.Screen name="Home" component={PastSessionScreen} /> 
+      <Stack.Screen name="Home" component={HomeScreen} /> 
       {Object.entries({
           ...tabsInner,
         }).map(([name, component]) => (
