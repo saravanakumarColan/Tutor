@@ -14,4 +14,5 @@ export const icons = {
     home_lite:require("./home_lite.png"),
     profile:require("./profile.png"),
     chat_lite:require("./chat_lite.png"),
+    task:require("./task.png"),
 }

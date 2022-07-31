@@ -12,6 +12,7 @@ import HomeScreen from "../Screens/HomeScreens/HomeScreen";
 const Tab = createBottomTabNavigator();
 // import ProfileScreen from "../Screens/ProfileScreen";
 import { icons } from "../Assets/icons";
+import { LG_BG_THEME } from "../Assets/Constant/fontsAndColors";
 export const CustomTab = () => {
   const { colors } = useTheme();
 
@@ -36,8 +37,13 @@ export const CustomTab = () => {
           borderTopWidth: 0.5,
           borderTopColor: "#199ECF",
           borderWidth: 0.5,
-          shadowColor: "#199ECF",
-          elevation: 1,
+          shadowColor: LG_BG_THEME.App_Text_Blue,
+          bottom:10,
+    shadowOffset: { width: 2, height: 2 },
+    shadowOpacity: 0.4,
+    shadowRadius: 8,
+    elevation: 10,
+          backgroundColor:'#fff'
         },
       }}
       initialRouteName="Home"
@@ -65,7 +71,7 @@ export const CustomTab = () => {
                     : null
                 }
               /> */}
-             <Image source={icons.home_lite} style={{height:20,width:20}} />
+             <Image  source={icons.home_lite} style={{height:20,width:20,tintColor:focused?"#199ECF":"#cccfcd"}} />
               {/* <FastImage
                 resizeMode={'contain'}
                 tintColor={focused ? colors.primary : colors.sublabelTextColor}
@@ -77,7 +83,7 @@ export const CustomTab = () => {
         }}
       />
       <Tab.Screen
-        name="Find a Tutor"
+        name="Tasks"
         component={My_club_Tab}
         options={{
           tabBarLabelStyle: { fontFamily: "Poppins-SemiBold" },
@@ -98,11 +104,7 @@ export const CustomTab = () => {
                     : null
                 }
               /> */}
-              <Icon
-                name="home"
-                size={22}
-                color={colors.sublabelTextColor}
-              />
+              <Image source={icons.task} style={{height:20,width:20,tintColor:focused?"#199ECF":"#cccfcd"}} />
               {/* <FastImage
                 resizeMode={'contain'}
                 tintColor={focused ? colors.primary : colors.sublabelTextColor}
@@ -123,7 +125,7 @@ export const CustomTab = () => {
           tabBarIcon: ({ color, size, focused }) => (
             <View style={{ justifyContent: "center", alignItems: "center" }}>
               
-              <Image source={icons.chat_lite} style={{height:20,width:20}} />
+              <Image source={icons.chat_lite} style={{height:20,width:20,tintColor:focused?"#199ECF":"#cccfcd"}} />
             </View>
           ),
         }}
@@ -136,7 +138,7 @@ export const CustomTab = () => {
 
           tabBarIcon: ({ color, size, focused }) => (
             <View>
-              <Image source={icons.profile} style={{height:20,width:20}} />
+              <Image source={icons.profile} style={{height:20,width:20,tintColor:focused?"#199ECF":"#cccfcd"}} />
             </View>
           ),
         }}
