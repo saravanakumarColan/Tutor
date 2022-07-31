@@ -253,7 +253,7 @@ const SideMenu = props => {
            
               <List.Item
                 onPress={() => {
-                  props.navigation.navigate('PaymentScreens')
+                  props.navigation.navigate('MyEarningsScreens')
                  
                 }}
                 left={() => (

@@ -52,7 +52,7 @@ export default function App() {
 
 
   const beforeLoggedIn = {
-    MyEarningsScreens:MyEarningsScreens,
+    
     StartScreen:StartScreen,
     SignupScreen:SignupScreen,
     LoginScreen: LoginScreen,
@@ -75,6 +75,7 @@ export default function App() {
     ComplaintsList:ComplaintsList,
     SubjectScreen:SubjectScreen,
     WithdrawScreen:WithdrawScreen,
+    MyEarningsScreens:MyEarningsScreens,
   };
   function AuthStack() {
     return (

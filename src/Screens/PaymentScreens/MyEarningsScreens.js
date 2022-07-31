@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Image } from "react-native";
+import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 import React from "react";
 import Header from "../../Components/Header";
 import HomeContainer from "../../Components/HomeContainer";
@@ -19,24 +19,30 @@ export default function MyEarningsScreens(props) {
       <Header title="My Earnings" {...props} />
       <View style={{ height: View_Spacing.VS_W2 }} />
       <View style={{ flex: 1, flexDirection: "row", justifyContent: "center" }}>
-        <View style={styles.Paypal_btn}>
+        <TouchableOpacity
+          onPress={() => props.navigation.navigate("PaymentScreens")}
+          style={styles.Paypal_btn}
+        >
           <Image
             style={styles.paypal_img}
             source={require("../../Assets/images/paypal.png")}
           />
-          <Text  style={{
-            fontSize: fontSize.Medium,
-            color: LG_BG_THEME.App_Text_Blue,
-          }}>{"Add your Account"}</Text>
-        </View>
+          <Text
+            style={{
+              fontSize: fontSize.Medium,
+              color: LG_BG_THEME.App_Text_Blue,
+            }}
+          >
+            {"Add your Account"}
+          </Text>
+        </TouchableOpacity>
       </View>
       <View style={{ height: View_Spacing.VS_W3 }} />
       <Button
-        onPress={() => alert("Link card")}
+        onPress={() => props.navigation.navigate("WithdrawScreen")}
         textStyle={{
           color: "#fff",
           fontSize: fontSize.Large,
-          
         }}
         name={"Withdraw Funds"}
       />
@@ -55,50 +61,69 @@ export default function MyEarningsScreens(props) {
           {"Payment History"}
         </Text>
       </View>
-      <View style={{ flex: 0.2, flexDirection: "row",height:View_Spacing.VS_W10,justifyContent:'center',}}>
-        <View style={{flex:0.8,flexDirection:'row',borderBottomWidth:0.3,borderColor:LG_BG_THEME.App_Text_Inactive}}>
-        <View style={{ flex: 0.4,justifyContent:'center', }}>
-          <Text
+      <View
+        style={{
+          flex: 0.2,
+          flexDirection: "row",
+          height: View_Spacing.VS_W10,
+          justifyContent: "center",
+        }}
+      >
+        <View
+          style={{
+            flex: 0.8,
+            flexDirection: "row",
+            borderBottomWidth: 0.3,
+            borderColor: LG_BG_THEME.App_Text_Inactive,
+          }}
+        >
+          <View style={{ flex: 0.4, justifyContent: "center" }}>
+            <Text
+              style={{
+                fontSize: fontSize.Medium,
+                color: LG_BG_THEME.App_Text_Blue,
+              }}
+            >
+              {"Harish"}
+            </Text>
+            <Text
+              style={{
+                fontSize: fontSize.Small,
+                color: LG_BG_THEME.App_Text_Inactive,
+                textAlign: "left",
+              }}
+            >
+              {"Harish"}
+            </Text>
+          </View>
+          <View style={{ flex: 0.3, justifyContent: "center" }}>
+            <Text
+              style={{
+                fontSize: fontSize.Medium,
+                color: LG_BG_THEME.App_Text_Blue,
+              }}
+            >
+              {"215.00 $"}
+            </Text>
+          </View>
+          <View
             style={{
-              fontSize: fontSize.Medium,
-              color: LG_BG_THEME.App_Text_Blue,
+              flex: 0.3,
+              justifyContent: "center",
+              alignItems: "flex-end",
             }}
           >
-            {"Harish"}
-          </Text>
-          <Text
-            style={{
-              fontSize: fontSize.Small,
-              color: LG_BG_THEME.App_Text_Inactive,
-              textAlign:'left'
-            }}
-          >
-            {"Harish"}
-          </Text>
-        </View>
-        <View style={{ flex: 0.3,justifyContent:'center',}}>
-          <Text
-            style={{
-              fontSize: fontSize.Medium,
-              color: LG_BG_THEME.App_Text_Blue,
-            }}
-          >
-            {"215.00 $"}
-          </Text>
-        </View>
-        <View style={{ flex: 0.3,justifyContent:'center',alignItems:'flex-end'}}>
-        <Text
-            style={{
-              fontSize: fontSize.Small,
-              color: LG_BG_THEME.App_Text_Green,
-            }}
-          >
-            {"Received"}
-          </Text>
-        </View>
+            <Text
+              style={{
+                fontSize: fontSize.Small,
+                color: LG_BG_THEME.App_Text_Green,
+              }}
+            >
+              {"Received"}
+            </Text>
+          </View>
         </View>
       </View>
-     
     </HomeContainer>
   );
 }
